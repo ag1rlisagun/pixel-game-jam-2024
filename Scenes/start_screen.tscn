@@ -1,0 +1,176 @@
+[gd_scene load_steps=8 format=3 uid="uid://d2by83v0k8ifh"]
+
+[ext_resource type="Script" path="res://Scenes/start_screen.gd" id="1_s8tg6"]
+[ext_resource type="AudioStream" uid="uid://60xmhlwu0ga4" path="res://Assets/Music/fish_game_title.wav" id="1_t67bj"]
+[ext_resource type="Texture2D" uid="uid://dmkgi47vmnvw6" path="res://Assets/Backgrounds/title_screen_placeholder.png" id="1_wtt22"]
+[ext_resource type="FontFile" uid="uid://b5nrh027kp47x" path="res://Assets/Fonts/Perfect DOS VGA 437.ttf" id="2_rgxw4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ub6ix"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n5xnv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_egic3"]
+
+[node name="StartScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s8tg6")
+
+[node name="TitleScreenPlaceholder" type="Sprite2D" parent="."]
+position = Vector2(576, 336)
+scale = Vector2(1.08125, 1.04444)
+texture = ExtResource("1_wtt22")
+
+[node name="TitleTextBlue" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -424.0
+offset_top = -228.0
+offset_right = 410.0
+offset_bottom = -125.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.0431373, 0, 0.494118, 0.576471)
+theme_override_fonts/font = ExtResource("2_rgxw4")
+theme_override_font_sizes/font_size = 100
+text = "Little Oannes"
+horizontal_alignment = 1
+
+[node name="TitleTextWhite" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -416.0
+offset_top = -220.0
+offset_right = 418.0
+offset_bottom = -117.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_rgxw4")
+theme_override_font_sizes/font_size = 100
+text = "Little Oannes"
+horizontal_alignment = 1
+
+[node name="NewGameButton" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -20.0
+offset_right = 576.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_rgxw4")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ub6ix")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_n5xnv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_egic3")
+text = "New Game"
+icon_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = 28.0
+offset_right = 576.0
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_rgxw4")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ub6ix")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_n5xnv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_egic3")
+text = "Continue"
+icon_alignment = 1
+
+[node name="OptionsButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = 76.0
+offset_right = 576.0
+offset_bottom = 115.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_rgxw4")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ub6ix")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_n5xnv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_egic3")
+text = "Options"
+icon_alignment = 1
+
+[node name="CreditsButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = 124.0
+offset_right = 576.0
+offset_bottom = 163.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_rgxw4")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ub6ix")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_n5xnv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_egic3")
+text = "Credits"
+icon_alignment = 1
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = 172.0
+offset_right = 576.0
+offset_bottom = 211.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_rgxw4")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ub6ix")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_n5xnv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_egic3")
+text = "Quit"
+icon_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_t67bj")
+autoplay = true
