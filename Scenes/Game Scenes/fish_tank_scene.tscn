@@ -1,0 +1,50 @@
+[gd_scene load_steps=11 format=3 uid="uid://c5nvjpkjngt1g"]
+
+[ext_resource type="PackedScene" uid="uid://djt8plesbx05" path="res://Scenes/Game Scenes/starter_fish_tank.tscn" id="1_jawij"]
+[ext_resource type="Script" path="res://Scripts/fish_tank_scene.gd" id="1_k0a2t"]
+[ext_resource type="Texture2D" uid="uid://bba7d4yfyutki" path="res://Assets/Backgrounds/title_screen_sway/Untitled_Artwork-1.png" id="1_l061k"]
+[ext_resource type="AudioStream" uid="uid://dl6cw1g2j2l4s" path="res://Assets/Music/little_oannes_radio1.wav" id="3_uvk44"]
+[ext_resource type="FontFile" uid="uid://b5nrh027kp47x" path="res://Assets/Fonts/Perfect DOS VGA 437.ttf" id="5_tdind"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hqkcv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hpvlx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aku5m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b5712"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eunso"]
+
+[node name="FishTankScene" type="Node2D"]
+script = ExtResource("1_k0a2t")
+
+[node name="UntitledArtwork-1" type="Sprite2D" parent="."]
+position = Vector2(392, 688)
+scale = Vector2(0.95, 0.95)
+texture = ExtResource("1_l061k")
+
+[node name="StarterFishTank" parent="." instance=ExtResource("1_jawij")]
+position = Vector2(632, 360)
+scale = Vector2(1.02, 1.02)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_uvk44")
+volume_db = -6.0
+autoplay = true
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 120.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("5_tdind")
+theme_override_font_sizes/font_size = 37
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hqkcv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hpvlx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_aku5m")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_b5712")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eunso")
+text = "Back"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

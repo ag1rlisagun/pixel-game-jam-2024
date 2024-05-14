@@ -1,0 +1,159 @@
+[gd_scene load_steps=15 format=3 uid="uid://wmhcwqh4juxy"]
+
+[ext_resource type="PackedScene" uid="uid://hwdfkcp5wx86" path="res://Scenes/Animated Background/animated_sprite_2d.tscn" id="1_ke2ea"]
+[ext_resource type="Script" path="res://Scripts/main_boat_scene.gd" id="1_y0obd"]
+[ext_resource type="AudioStream" uid="uid://bmyi1o2nh0enf" path="res://Assets/Music/little_oannes_radio1(no filter).wav" id="3_m6twp"]
+[ext_resource type="FontFile" uid="uid://b5nrh027kp47x" path="res://Assets/Fonts/Perfect DOS VGA 437.ttf" id="4_ws1jm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_puaut"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xehf7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vk3fh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jqpdr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g18b4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h00lv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_umjl5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ope52"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lcfwq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8dngs"]
+
+[node name="main_boat_scene" type="Node2D"]
+script = ExtResource("1_y0obd")
+
+[node name="AnimatedSprite2D" parent="." instance=ExtResource("1_ke2ea")]
+frame_progress = 0.163322
+
+[node name="FishTankButton" type="Button" parent="."]
+offset_left = 547.0
+offset_top = 53.0
+offset_right = 968.0
+offset_bottom = 321.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_puaut")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xehf7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vk3fh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_jqpdr")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g18b4")
+
+[node name="DiveButton" type="Button" parent="."]
+offset_left = 1029.0
+offset_top = 29.0
+offset_right = 1235.0
+offset_bottom = 386.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_puaut")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xehf7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vk3fh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_jqpdr")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g18b4")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_m6twp")
+volume_db = -6.0
+autoplay = true
+
+[node name="FishTankPrompt" type="Label" parent="."]
+visible = false
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_top = 128.0
+offset_right = 770.0
+offset_bottom = 166.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_ws1jm")
+theme_override_font_sizes/font_size = 34
+text = "Check the fish tank?"
+horizontal_alignment = 1
+
+[node name="DivingPrompt" type="Label" parent="."]
+visible = false
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 640.0
+offset_top = 400.0
+offset_right = 1474.0
+offset_bottom = 438.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_ws1jm")
+theme_override_font_sizes/font_size = 34
+text = "Go diving?"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 320.0
+offset_right = 1280.0
+offset_bottom = 472.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="StartMenuPrompt" type="Label" parent="MarginContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_ws1jm")
+theme_override_font_sizes/font_size = 34
+text = "Back to the start?"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 100
+
+[node name="BackToStartButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_ws1jm")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_h00lv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_umjl5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ope52")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_lcfwq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8dngs")
+text = "Yes"
+
+[node name="StayHereButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_ws1jm")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_h00lv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_umjl5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ope52")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_lcfwq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8dngs")
+text = "No"
+
+[connection signal="mouse_entered" from="FishTankButton" to="." method="_on_fish_tank_button_mouse_entered"]
+[connection signal="mouse_exited" from="FishTankButton" to="." method="_on_fish_tank_button_mouse_exited"]
+[connection signal="pressed" from="FishTankButton" to="." method="_on_fish_tank_button_pressed"]
+[connection signal="mouse_entered" from="DiveButton" to="." method="_on_dive_button_mouse_entered"]
+[connection signal="mouse_exited" from="DiveButton" to="." method="_on_dive_button_mouse_exited"]
+[connection signal="pressed" from="DiveButton" to="." method="_on_dive_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/BackToStartButton" to="." method="_on_back_to_start_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/StayHereButton" to="." method="_on_stay_here_button_pressed"]

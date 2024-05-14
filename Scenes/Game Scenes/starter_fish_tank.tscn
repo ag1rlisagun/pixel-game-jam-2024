@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://djt8plesbx05"]
+
+[ext_resource type="Texture2D" uid="uid://rc8pm205dfld" path="res://Assets/Sprites/Tanks/ft without details big.png" id="1_dcf6c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yrgoy"]
+size = Vector2(992, 702)
+
+[node name="StarterFishTank" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-8, 2.08165e-12)
+scale = Vector2(0.39, 0.39)
+texture = ExtResource("1_dcf6c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, 2.08165e-12)
+shape = SubResource("RectangleShape2D_yrgoy")

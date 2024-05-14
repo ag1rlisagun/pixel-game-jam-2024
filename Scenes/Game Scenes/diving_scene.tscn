@@ -1,0 +1,52 @@
+[gd_scene load_steps=11 format=3 uid="uid://cnyolxg482ntl"]
+
+[ext_resource type="AudioStream" uid="uid://i13myngltv3y" path="res://Assets/Music/oannes_underwater_maybe.wav" id="1_l6gxf"]
+[ext_resource type="Script" path="res://Scripts/diving_scene.gd" id="1_qli07"]
+[ext_resource type="PackedScene" uid="uid://brq5x3f3yu208" path="res://Scenes/Player/player_diver.tscn" id="1_y513f"]
+[ext_resource type="Texture2D" uid="uid://c8ggokc0gtu4q" path="res://Assets/Backgrounds/diving_background_placeholder.png" id="3_04qu2"]
+[ext_resource type="FontFile" uid="uid://b5nrh027kp47x" path="res://Assets/Fonts/Perfect DOS VGA 437.ttf" id="5_pgsli"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4cbj3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ytj8o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gba8r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vqmja"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yowik"]
+
+[node name="DivingScene" type="Node2D"]
+script = ExtResource("1_qli07")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_l6gxf")
+volume_db = -6.0
+autoplay = true
+
+[node name="DivingBackgroundPlaceholder" type="Sprite2D" parent="."]
+position = Vector2(699, 351)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_04qu2")
+
+[node name="PlayerDiver" parent="." instance=ExtResource("1_y513f")]
+position = Vector2(312, 168)
+
+[node name="Camera2D" type="Camera2D" parent="PlayerDiver"]
+zoom = Vector2(2.5, 2.5)
+
+[node name="BackButton" type="Button" parent="PlayerDiver/Camera2D"]
+offset_left = -248.0
+offset_top = -136.0
+offset_right = -214.0
+offset_bottom = -120.0
+theme_override_fonts/font = ExtResource("5_pgsli")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4cbj3")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ytj8o")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_gba8r")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vqmja")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yowik")
+text = "Back"
+
+[connection signal="pressed" from="PlayerDiver/Camera2D/BackButton" to="." method="_on_back_button_pressed"]

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bmyi1o2nh0enf"
+path="res://.godot/imported/little_oannes_radio1(no filter).wav-8477df119d8ee44f766a311f028dfb9f.sample"
+
+[deps]
+
+source_file="res://Assets/Music/little_oannes_radio1(no filter).wav"
+dest_files=["res://.godot/imported/little_oannes_radio1(no filter).wav-8477df119d8ee44f766a311f028dfb9f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

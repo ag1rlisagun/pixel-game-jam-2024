@@ -1,0 +1,63 @@
+[gd_scene load_steps=12 format=3 uid="uid://brq5x3f3yu208"]
+
+[ext_resource type="Texture2D" uid="uid://cdrugoustjg6i" path="res://Assets/Sprites/Diver/d1 big.png" id="1_4pdtc"]
+[ext_resource type="Script" path="res://Scripts/player_diver.gd" id="1_lyyf6"]
+[ext_resource type="Texture2D" uid="uid://2ue00c2887vq" path="res://Assets/Sprites/Diver/d2 big.png" id="2_6redf"]
+[ext_resource type="Texture2D" uid="uid://cqhhmxedqfm6v" path="res://Assets/Sprites/Diver/d3 big.png" id="3_60fsm"]
+[ext_resource type="Texture2D" uid="uid://bl0mpj7ex33ak" path="res://Assets/Sprites/Diver/d4 big.png" id="4_pvked"]
+[ext_resource type="Texture2D" uid="uid://e11rjnxdugnw" path="res://Assets/Sprites/Diver/d5 big.png" id="5_xf77s"]
+[ext_resource type="Texture2D" uid="uid://ddn8as57cdhe1" path="res://Assets/Sprites/Diver/d7 big.png" id="6_sjuvb"]
+[ext_resource type="Texture2D" uid="uid://c8bfyt464ro2a" path="res://Assets/Sprites/Diver/d8 big.png" id="7_u48ny"]
+[ext_resource type="Texture2D" uid="uid://whkyt1c0i2y0" path="res://Assets/Sprites/Diver/d9 big.png" id="8_740a5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a82jn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4pdtc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_6redf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_60fsm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pvked")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xf77s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_sjuvb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_u48ny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_740a5")
+}],
+"loop": true,
+"name": &"swim",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o558v"]
+height = 88.2383
+
+[node name="PlayerDiver" type="CharacterBody2D"]
+script = ExtResource("1_lyyf6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+rotation = -0.179769
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_a82jn")
+animation = &"swim"
+autoplay = "swim"
+frame_progress = 0.356417
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.44572e-08, -2)
+rotation = 1.61617
+shape = SubResource("CapsuleShape2D_o558v")
