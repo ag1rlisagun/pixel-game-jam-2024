@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://chadc4kft15l3"]
+
+[node name="red_snapper_collect" type="Node2D"]

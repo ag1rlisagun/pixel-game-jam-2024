@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://c5nvjpkjngt1g"]
+[gd_scene load_steps=13 format=3 uid="uid://c5nvjpkjngt1g"]
 
 [ext_resource type="PackedScene" uid="uid://djt8plesbx05" path="res://Scenes/Game Scenes/starter_fish_tank.tscn" id="1_jawij"]
 [ext_resource type="Script" path="res://Scripts/fish_tank_scene.gd" id="1_k0a2t"]
 [ext_resource type="Texture2D" uid="uid://bba7d4yfyutki" path="res://Assets/Backgrounds/title_screen_sway/Untitled_Artwork-1.png" id="1_l061k"]
+[ext_resource type="PackedScene" uid="uid://cbtaxioix1bhc" path="res://Scenes/Game Scenes/big_fish_tank.tscn" id="3_gcbkc"]
 [ext_resource type="AudioStream" uid="uid://dl6cw1g2j2l4s" path="res://Assets/Music/little_oannes_radio1.wav" id="3_uvk44"]
 [ext_resource type="FontFile" uid="uid://b5nrh027kp47x" path="res://Assets/Fonts/Perfect DOS VGA 437.ttf" id="5_tdind"]
+[ext_resource type="PackedScene" uid="uid://6aiqabswphjy" path="res://Scenes/Fish Characters/fish_class.tscn" id="6_4df7a"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hqkcv"]
 
@@ -20,9 +22,15 @@
 script = ExtResource("1_k0a2t")
 
 [node name="UntitledArtwork-1" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(392, 688)
 scale = Vector2(0.95, 0.95)
 texture = ExtResource("1_l061k")
+
+[node name="big_fish_tank" parent="." instance=ExtResource("3_gcbkc")]
+visible = false
+position = Vector2(632, 360)
+scale = Vector2(1.02, 1.02)
 
 [node name="StarterFishTank" parent="." instance=ExtResource("1_jawij")]
 position = Vector2(632, 360)
@@ -46,5 +54,37 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_aku5m")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_b5712")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_eunso")
 text = "Back"
+
+[node name="BettaFish" parent="." instance=ExtResource("6_4df7a")]
+position = Vector2(312, 216)
+type = "BettaFish"
+
+[node name="ClownFish" parent="." instance=ExtResource("6_4df7a")]
+position = Vector2(504, 280)
+type = "ClownFish"
+
+[node name="GreenSunFish" parent="." instance=ExtResource("6_4df7a")]
+position = Vector2(920, 344)
+type = "GreenSunFish"
+
+[node name="MaroonClownFish" parent="." instance=ExtResource("6_4df7a")]
+position = Vector2(760, 240)
+type = "MaroonClownFish"
+
+[node name="HummingbirdTetra" parent="." instance=ExtResource("6_4df7a")]
+position = Vector2(416, 384)
+type = "HummingbirdTetra"
+
+[node name="Minnow" parent="." instance=ExtResource("6_4df7a")]
+position = Vector2(336, 488)
+type = "Minnow"
+
+[node name="TetraFish" parent="." instance=ExtResource("6_4df7a")]
+position = Vector2(976, 472)
+type = "TetraFish"
+
+[node name="RedSnapper" parent="." instance=ExtResource("6_4df7a")]
+position = Vector2(576, 512)
+type = "RedSnapper"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

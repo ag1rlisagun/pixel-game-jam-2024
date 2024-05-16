@@ -29,7 +29,7 @@
 script = ExtResource("1_y0obd")
 
 [node name="AnimatedSprite2D" parent="." instance=ExtResource("1_ke2ea")]
-frame_progress = 0.163322
+frame_progress = 0.174056
 
 [node name="FishTankButton" type="Button" parent="."]
 offset_left = 547.0

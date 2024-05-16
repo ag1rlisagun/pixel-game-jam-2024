@@ -1,10 +1,76 @@
-[gd_scene load_steps=11 format=3 uid="uid://cnyolxg482ntl"]
+[gd_scene load_steps=14 format=3 uid="uid://cnyolxg482ntl"]
 
 [ext_resource type="AudioStream" uid="uid://i13myngltv3y" path="res://Assets/Music/oannes_underwater_maybe.wav" id="1_l6gxf"]
 [ext_resource type="Script" path="res://Scripts/diving_scene.gd" id="1_qli07"]
 [ext_resource type="PackedScene" uid="uid://brq5x3f3yu208" path="res://Scenes/Player/player_diver.tscn" id="1_y513f"]
 [ext_resource type="Texture2D" uid="uid://c8ggokc0gtu4q" path="res://Assets/Backgrounds/diving_background_placeholder.png" id="3_04qu2"]
 [ext_resource type="FontFile" uid="uid://b5nrh027kp47x" path="res://Assets/Fonts/Perfect DOS VGA 437.ttf" id="5_pgsli"]
+[ext_resource type="Texture2D" uid="uid://3oumkqln7pg8" path="res://Assets/Sprites/seasons_platformer_tileset_kcaze_on_itch_io/summer_tiles.png" id="6_w1cse"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w5sof"]
+texture = ExtResource("6_w1cse")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:1/0/physics_layer_0/angular_velocity = 0.0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:2/0 = 0
+3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:2/0/physics_layer_0/angular_velocity = 0.0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:3/0 = 0
+1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:3/0/physics_layer_0/angular_velocity = 0.0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:3/0 = 0
+2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:3/0/physics_layer_0/angular_velocity = 0.0
+3:3/0 = 0
+3:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:3/0/physics_layer_0/angular_velocity = 0.0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_rpe4r"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_w5sof")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4cbj3"]
 
@@ -25,9 +91,16 @@ volume_db = -6.0
 autoplay = true
 
 [node name="DivingBackgroundPlaceholder" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(699, 351)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("3_04qu2")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_rpe4r")
+format = 2
+layer_0/name = "Obstacles"
+layer_0/tile_data = PackedInt32Array(851999, 196608, 0, 917535, 196608, 1, 851998, 65536, 3, 852000, 196608, 0, 852001, 196608, 0, 917536, 65536, 2, 917537, 65536, 2, 852002, 196608, 0, 852003, 196608, 0, 852004, 196608, 0, 852005, 196608, 0, 852006, 196608, 0, 852007, 196608, 0, 852008, 0, 0, 917544, 196608, 3, 917538, 65536, 2, 917539, 65536, 2, 917540, 65536, 2, 917541, 65536, 2, 917542, 65536, 2, 917543, 65536, 2, 983061, 65536, 3, 1048597, 0, 2, 983062, 196608, 0, 1048598, 65536, 2, 983063, 196608, 0, 1048599, 65536, 2, 983064, 196608, 0, 1048600, 65536, 2, 983065, 196608, 0, 1048601, 65536, 2, 983066, 196608, 0, 1048602, 65536, 2, 983067, 196608, 0, 1048603, 65536, 2, 983068, 196608, 0, 1048604, 65536, 2, 983069, 196608, 0, 1048605, 65536, 2, 1048606, 65536, 2, 983071, 196608, 2, 1048607, 196608, 3, 917534, 65536, 0, 983070, 65536, 1, 720905, 65536, 3, 786441, 0, 2, 720906, 196608, 0, 786442, 65536, 2, 720907, 196608, 0, 786443, 65536, 2, 720908, 196608, 0, 786444, 65536, 2, 720909, 0, 0, 786445, 196608, 3, 1572877, 65536, 3, 1638413, 0, 2, 1572878, 196608, 0, 1638414, 65536, 2, 1572879, 196608, 0, 1638415, 65536, 2, 1572880, 196608, 0, 1638416, 65536, 2, 1572881, 0, 0, 1638417, 196608, 3)
 
 [node name="PlayerDiver" parent="." instance=ExtResource("1_y513f")]
 position = Vector2(312, 168)

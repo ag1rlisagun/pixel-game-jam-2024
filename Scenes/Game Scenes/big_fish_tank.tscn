@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbtaxioix1bhc"]
+
+[ext_resource type="Texture2D" uid="uid://pqiai5hmw32n" path="res://Assets/Sprites/Tanks/glasst big.png" id="1_lbpik"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6mhgj"]
+size = Vector2(1112, 702)
+
+[node name="big_fish_tank" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.39, 0.39)
+texture = ExtResource("1_lbpik")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -5)
+shape = SubResource("RectangleShape2D_6mhgj")
