@@ -4,6 +4,8 @@ extends Node2D
 @onready var diving_text = $DivingPrompt
 @onready var menu_prompt = $MarginContainer
 
+# add a timer to access diving
+
 func _on_fish_tank_button_pressed(): # check the fish tank
 	get_tree().change_scene_to_file("res://Scenes/Game Scenes/fish_tank_scene.tscn")
 

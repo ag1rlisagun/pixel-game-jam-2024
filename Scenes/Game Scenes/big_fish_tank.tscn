@@ -1,9 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbtaxioix1bhc"]
+[gd_scene load_steps=4 format=3 uid="uid://cbtaxioix1bhc"]
 
 [ext_resource type="Texture2D" uid="uid://pqiai5hmw32n" path="res://Assets/Sprites/Tanks/glasst big.png" id="1_lbpik"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6mhgj"]
-size = Vector2(1112, 702)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dy05a"]
+size = Vector2(39, 663)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dh0y"]
+size = Vector2(1122.25, 68.25)
 
 [node name="big_fish_tank" type="StaticBody2D"]
 
@@ -11,6 +14,18 @@ size = Vector2(1112, 702)
 scale = Vector2(0.39, 0.39)
 texture = ExtResource("1_lbpik")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-527, 7)
+shape = SubResource("RectangleShape2D_dy05a")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -5)
-shape = SubResource("RectangleShape2D_6mhgj")
+position = Vector2(533.5, 1)
+shape = SubResource("RectangleShape2D_dy05a")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(5, 332)
+shape = SubResource("RectangleShape2D_7dh0y")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(-0.125, -307.125)
+shape = SubResource("RectangleShape2D_7dh0y")

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cbtaxioix1bhc" path="res://Scenes/Game Scenes/big_fish_tank.tscn" id="3_gcbkc"]
 [ext_resource type="AudioStream" uid="uid://dl6cw1g2j2l4s" path="res://Assets/Music/little_oannes_radio1.wav" id="3_uvk44"]
 [ext_resource type="FontFile" uid="uid://b5nrh027kp47x" path="res://Assets/Fonts/Perfect DOS VGA 437.ttf" id="5_tdind"]
-[ext_resource type="PackedScene" uid="uid://6aiqabswphjy" path="res://Scenes/Fish Characters/fish_class.tscn" id="6_4df7a"]
+[ext_resource type="PackedScene" uid="uid://bl3quuv38rhfe" path="res://Scenes/Fish Characters/fish_character_scene.tscn" id="6_rsvdp"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hqkcv"]
 
@@ -21,6 +21,11 @@
 [node name="FishTankScene" type="Node2D"]
 script = ExtResource("1_k0a2t")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_uvk44")
+volume_db = -6.0
+autoplay = true
+
 [node name="UntitledArtwork-1" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(392, 688)
@@ -29,17 +34,52 @@ texture = ExtResource("1_l061k")
 
 [node name="big_fish_tank" parent="." instance=ExtResource("3_gcbkc")]
 visible = false
-position = Vector2(632, 360)
-scale = Vector2(1.02, 1.02)
+position = Vector2(624, 360)
+scale = Vector2(1.05, 1.05)
 
 [node name="StarterFishTank" parent="." instance=ExtResource("1_jawij")]
-position = Vector2(632, 360)
-scale = Vector2(1.02, 1.02)
+position = Vector2(632, 368)
+scale = Vector2(1.1, 1.1)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_uvk44")
-volume_db = -6.0
-autoplay = true
+[node name="Betta" parent="." instance=ExtResource("6_rsvdp")]
+position = Vector2(968, 232)
+collision_layer = 0
+type = "Betta Fish"
+
+[node name="Clown" parent="." instance=ExtResource("6_rsvdp")]
+position = Vector2(592, 200)
+collision_layer = 0
+type = "Clownfish"
+
+[node name="Green" parent="." instance=ExtResource("6_rsvdp")]
+position = Vector2(1040, 512)
+collision_layer = 0
+type = "Green Sunfish"
+
+[node name="Maroon" parent="." instance=ExtResource("6_rsvdp")]
+position = Vector2(248, 200)
+collision_layer = 0
+type = "Maroon Clownfish"
+
+[node name="Hummingbird" parent="." instance=ExtResource("6_rsvdp")]
+position = Vector2(232, 456)
+collision_layer = 0
+type = "Hummingbird Tetra"
+
+[node name="Minnow2" parent="." instance=ExtResource("6_rsvdp")]
+position = Vector2(576, 304)
+collision_layer = 0
+type = "Minnow"
+
+[node name="Tetra" parent="." instance=ExtResource("6_rsvdp")]
+position = Vector2(672, 456)
+collision_layer = 0
+type = "Tetra Fish"
+
+[node name="RedSnapper2" parent="." instance=ExtResource("6_rsvdp")]
+position = Vector2(368, 352)
+collision_layer = 0
+type = "Red Snapper"
 
 [node name="BackButton" type="Button" parent="."]
 offset_left = 8.0
@@ -54,37 +94,5 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_aku5m")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_b5712")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_eunso")
 text = "Back"
-
-[node name="BettaFish" parent="." instance=ExtResource("6_4df7a")]
-position = Vector2(312, 216)
-type = "BettaFish"
-
-[node name="ClownFish" parent="." instance=ExtResource("6_4df7a")]
-position = Vector2(504, 280)
-type = "ClownFish"
-
-[node name="GreenSunFish" parent="." instance=ExtResource("6_4df7a")]
-position = Vector2(920, 344)
-type = "GreenSunFish"
-
-[node name="MaroonClownFish" parent="." instance=ExtResource("6_4df7a")]
-position = Vector2(760, 240)
-type = "MaroonClownFish"
-
-[node name="HummingbirdTetra" parent="." instance=ExtResource("6_4df7a")]
-position = Vector2(416, 384)
-type = "HummingbirdTetra"
-
-[node name="Minnow" parent="." instance=ExtResource("6_4df7a")]
-position = Vector2(336, 488)
-type = "Minnow"
-
-[node name="TetraFish" parent="." instance=ExtResource("6_4df7a")]
-position = Vector2(976, 472)
-type = "TetraFish"
-
-[node name="RedSnapper" parent="." instance=ExtResource("6_4df7a")]
-position = Vector2(576, 512)
-type = "RedSnapper"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

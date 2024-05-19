@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://brq5x3f3yu208"]
+[gd_scene load_steps=13 format=3 uid="uid://brq5x3f3yu208"]
 
 [ext_resource type="Texture2D" uid="uid://cdrugoustjg6i" path="res://Assets/Sprites/Diver/d1 big.png" id="1_4pdtc"]
 [ext_resource type="Script" path="res://Scripts/player_diver.gd" id="1_lyyf6"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ddn8as57cdhe1" path="res://Assets/Sprites/Diver/d7 big.png" id="6_sjuvb"]
 [ext_resource type="Texture2D" uid="uid://c8bfyt464ro2a" path="res://Assets/Sprites/Diver/d8 big.png" id="7_u48ny"]
 [ext_resource type="Texture2D" uid="uid://whkyt1c0i2y0" path="res://Assets/Sprites/Diver/d9 big.png" id="8_740a5"]
+[ext_resource type="FontFile" uid="uid://b5nrh027kp47x" path="res://Assets/Fonts/Perfect DOS VGA 437.ttf" id="10_caq1a"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a82jn"]
 animations = [{
@@ -61,3 +62,31 @@ frame_progress = 0.356417
 position = Vector2(-2.44572e-08, -2)
 rotation = 1.61617
 shape = SubResource("CapsuleShape2D_o558v")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollectRange" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2.44572e-08, -2)
+rotation = 1.61617
+shape = SubResource("CapsuleShape2D_o558v")
+
+[node name="ActionPrompt" type="Label" parent="."]
+visible = false
+texture_filter = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -56.0
+offset_top = -43.0
+offset_right = 56.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("10_caq1a")
+theme_override_font_sizes/font_size = 16
+text = "press \"e\""
+horizontal_alignment = 1
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

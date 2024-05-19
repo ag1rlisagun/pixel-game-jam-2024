@@ -1,5 +1,5 @@
-# class_name Fish 
-extends Node2D
+class_name Fish 
+extends CharacterBody2D
 
 enum {
 	IDLE,
@@ -21,7 +21,8 @@ var dir = Vector2.RIGHT
 @onready var fish_name = $FishName
 @onready var fish_attributes = $FishAttributes
 @onready var sprite = $Sprite2D
-@onready var coll_shape = $Area2D/CollisionShape2D
+@onready var coll_shape1 = $Area2D/CollisionShape2D
+@onready var coll_shape2 = $CollisionShape2D
 
 var player_entered = false
 var is_diving = false
@@ -29,6 +30,7 @@ var is_diving = false
 # FIGURE OUT HEALTH THAT DEPLETES AND SAVES
 
 func choose(array):
+	print("Shuffling Array...")
 	array.shuffle()
 	return array.front()
 
@@ -48,19 +50,48 @@ func _on_area_2d_body_entered(body):
 func _on_area_2d_body_exited(body):
 	if body.has_method("player"): 
 		player_entered = false
+		
+func move(delta):
+	print("Moving ")
+	position += dir * speed * delta
+	if dir.x == 1:
+		sprite.flip_h = false
+	elif dir.x == -1:
+		sprite.flip_h = true
 			
 func _process(delta):
+	match current_state:
+		IDLE:
+			pass
+		MOVE:
+			move(delta)
+		NEW_DIR:
+			dir = choose([Vector2.RIGHT, Vector2.LEFT])
+
 	if player_entered:
 		if Input.is_action_just_pressed("action"):
 			fish.visible = false
 			queue_free()
+			
+	move_and_slide()
+
+func _on_timer_timeout():
+	print("Getting new timer wait time...")
+	$Timer.wait_time = choose([0.75, 1, 1.5])
+	
+	print("Choosing a new state...")
+	current_state = choose([IDLE, NEW_DIR, MOVE])
 
 func die():
 	health = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print("Randomizing...")
+	randomize()
+	
 	is_diving = get_tree().get_current_scene().scene_file_path == "res://Scenes/Game Scenes/diving_scene.tscn"
+	print("Getting type of fish...")
 	
 	if is_diving:
 		sprite.scale.x = 0.1
@@ -76,12 +107,16 @@ func _ready():
 		
 	if type == "Betta Fish":
 		if is_diving:
-			coll_shape.scale.x = 3
-			coll_shape.scale.y = 3
+			coll_shape1.scale.x = 3.5
+			coll_shape1.scale.y = 3.5
+			coll_shape2.scale.x = 2.5
+			coll_shape2.scale.y = 2.5
 			speed = 200
 		else:
-			coll_shape.scale.x = 6
-			coll_shape.scale.y = 6
+			coll_shape1.scale.x = 6.5
+			coll_shape1.scale.y = 6.5
+			coll_shape2.scale.x = 5.5
+			coll_shape2.scale.y = 5.5
 			speed = 100
 		max_health = 100
 		health = 100
@@ -91,12 +126,16 @@ func _ready():
 	
 	if type == "Clownfish":
 		if is_diving:
-			coll_shape.scale.x = 2.5
-			coll_shape.scale.y = 2.5
+			coll_shape1.scale.x = 3
+			coll_shape1.scale.y = 3
+			coll_shape2.scale.x = 2
+			coll_shape2.scale.y = 2
 			speed = 400
 		else:
-			coll_shape.scale.x = 5
-			coll_shape.scale.y = 5
+			coll_shape1.scale.x = 5.5
+			coll_shape1.scale.y = 5.5
+			coll_shape2.scale.x = 4.5
+			coll_shape2.scale.y = 4.5
 			speed = 200
 		max_health = 200
 		health = 200
@@ -106,12 +145,16 @@ func _ready():
 	
 	if type == "Hummingbird Tetra":
 		if is_diving:
-			coll_shape.scale.x = 2
-			coll_shape.scale.y = 2
+			coll_shape1.scale.x = 2.5
+			coll_shape1.scale.y = 2.5
+			coll_shape2.scale.x = 1.5
+			coll_shape2.scale.y = 1.5
 			speed = 200
 		else:
-			coll_shape.scale.x = 4
-			coll_shape.scale.y = 4
+			coll_shape1.scale.x = 4.5
+			coll_shape1.scale.y = 4.5
+			coll_shape2.scale.x = 3.5
+			coll_shape2.scale.y = 3.5
 			speed = 100
 		max_health = 100
 		health = 100
@@ -121,12 +164,16 @@ func _ready():
 
 	if type == "Green Sunfish":
 		if is_diving:
-			coll_shape.scale.x = 3.5
-			coll_shape.scale.y = 3.5
+			coll_shape1.scale.x = 4
+			coll_shape1.scale.y = 4
+			coll_shape2.scale.x = 3
+			coll_shape2.scale.y = 3
 			speed = 130
 		else:
-			coll_shape.scale.x = 7
-			coll_shape.scale.y = 7
+			coll_shape1.scale.x = 7.5
+			coll_shape1.scale.y = 7.5
+			coll_shape2.scale.x = 6.5
+			coll_shape2.scale.y = 6.5
 			speed = 65
 		max_health = 300
 		health = 300
@@ -136,12 +183,16 @@ func _ready():
 
 	if type == "Maroon Clownfish":
 		if is_diving:
-			coll_shape.scale.x = 1.5
-			coll_shape.scale.y = 1.5
+			coll_shape1.scale.x = 2
+			coll_shape1.scale.y = 2
+			coll_shape2.scale.x = 1
+			coll_shape2.scale.y = 1
 			speed = 200
 		else:
-			coll_shape.scale.x = 3
-			coll_shape.scale.y = 3
+			coll_shape1.scale.x = 3.5
+			coll_shape1.scale.y = 3.5
+			coll_shape2.scale.x = 2.5
+			coll_shape2.scale.y = 2.5
 			speed = 100
 		max_health = 300
 		health = 100
@@ -151,12 +202,16 @@ func _ready():
 
 	if type == "Minnow":
 		if is_diving:
-			coll_shape.scale.x = 1.5
-			coll_shape.scale.y = 1.5
+			coll_shape1.scale.x = 2
+			coll_shape1.scale.y = 2
+			coll_shape2.scale.x = 1
+			coll_shape2.scale.y = 1
 			speed = 200
 		else:
-			coll_shape.scale.x = 3
-			coll_shape.scale.y = 3
+			coll_shape1.scale.x = 3.5
+			coll_shape1.scale.y = 3.5
+			coll_shape2.scale.x = 2.5
+			coll_shape2.scale.y = 2.5
 			speed = 100
 		max_health = 300
 		health = 100
@@ -166,12 +221,16 @@ func _ready():
 
 	if type == "Red Snapper":
 		if is_diving:
-			coll_shape.scale.x = 3
-			coll_shape.scale.y = 3
+			coll_shape1.scale.x = 3.5
+			coll_shape1.scale.y = 3.5
+			coll_shape2.scale.x = 2.5
+			coll_shape2.scale.y = 2.5
 			speed = 200
 		else:
-			coll_shape.scale.x = 6
-			coll_shape.scale.y = 6
+			coll_shape1.scale.x = 6.5
+			coll_shape1.scale.y = 6.5
+			coll_shape2.scale.x = 5.5
+			coll_shape2.scale.y = 5.5
 			speed = 100
 		max_health = 300
 		health = 100
@@ -181,12 +240,16 @@ func _ready():
 
 	if type == "Tetra Fish":
 		if is_diving:
-			coll_shape.scale.x = 2.5
-			coll_shape.scale.y = 2.5
+			coll_shape1.scale.x = 3
+			coll_shape1.scale.y = 3
+			coll_shape2.scale.x = 2
+			coll_shape2.scale.y = 2
 			speed = 200
 		else:
-			coll_shape.scale.x = 5
-			coll_shape.scale.y = 5
+			coll_shape1.scale.x = 5.5
+			coll_shape1.scale.y = 5.5
+			coll_shape2.scale.x = 4.5
+			coll_shape2.scale.y = 4.5
 			speed = 100
 		max_health = 300
 		health = 100
@@ -196,3 +259,4 @@ func _ready():
 	
 	fish_name.text = type
 	fish_attributes.text = "Health: " + str(health) + "/" + str(health) + "\n" + " Rarity: " + str(rarity) + "/10"
+

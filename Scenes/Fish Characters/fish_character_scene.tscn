@@ -1,13 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://6aiqabswphjy"]
+[gd_scene load_steps=5 format=3 uid="uid://bl3quuv38rhfe"]
 
-[ext_resource type="Script" path="res://Scripts/fish_class.gd" id="1_uij78"]
-[ext_resource type="FontFile" uid="uid://b5nrh027kp47x" path="res://Assets/Fonts/Perfect DOS VGA 437.ttf" id="2_vf4l0"]
-[ext_resource type="Script" path="res://Scripts/Area2D.gd" id="3_ifhc1"]
+[ext_resource type="Script" path="res://Scripts/fish_character_scene.gd" id="1_4pivt"]
+[ext_resource type="FontFile" uid="uid://b5nrh027kp47x" path="res://Assets/Fonts/Perfect DOS VGA 437.ttf" id="1_x3g4b"]
+[ext_resource type="Script" path="res://Scripts/Area2D.gd" id="2_5qbu1"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_bs200"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_36elo"]
 
-[node name="Fish" type="Node2D"]
-script = ExtResource("1_uij78")
+[node name="FishCharacter" type="CharacterBody2D"]
+script = ExtResource("1_4pivt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_36elo")
 
 [node name="FishName" type="Label" parent="."]
 visible = false
@@ -22,7 +25,7 @@ offset_right = 56.0
 offset_bottom = -38.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("2_vf4l0")
+theme_override_fonts/font = ExtResource("1_x3g4b")
 theme_override_font_sizes/font_size = 22
 text = "Fish Name"
 horizontal_alignment = 1
@@ -30,10 +33,10 @@ horizontal_alignment = 1
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("3_ifhc1")
+script = ExtResource("2_5qbu1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_bs200")
+shape = SubResource("CircleShape2D_36elo")
 
 [node name="FishAttributes" type="Label" parent="."]
 visible = false
@@ -46,12 +49,16 @@ offset_right = 96.0
 offset_bottom = 66.0
 grow_horizontal = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("2_vf4l0")
+theme_override_fonts/font = ExtResource("1_x3g4b")
 theme_override_font_sizes/font_size = 22
 text = "Fish Attributes"
 horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

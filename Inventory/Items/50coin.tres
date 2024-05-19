@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://bvfddcsbfrfpd"]
+
+[ext_resource type="Script" path="res://Inventory/inventory_item.gd" id="1_4m226"]
+[ext_resource type="Texture2D" uid="uid://v34lhyq0fuke" path="res://Assets/Sprites/Collectibles/coin big.png" id="2_tdp33"]
+
+[resource]
+script = ExtResource("1_4m226")
+name = "50c"
+texture = ExtResource("2_tdp33")
+price = 10

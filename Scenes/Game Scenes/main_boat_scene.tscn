@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://wmhcwqh4juxy"]
+[gd_scene load_steps=16 format=3 uid="uid://wmhcwqh4juxy"]
 
 [ext_resource type="PackedScene" uid="uid://hwdfkcp5wx86" path="res://Scenes/Animated Background/animated_sprite_2d.tscn" id="1_ke2ea"]
 [ext_resource type="Script" path="res://Scripts/main_boat_scene.gd" id="1_y0obd"]
 [ext_resource type="AudioStream" uid="uid://bmyi1o2nh0enf" path="res://Assets/Music/little_oannes_radio1(no filter).wav" id="3_m6twp"]
 [ext_resource type="FontFile" uid="uid://b5nrh027kp47x" path="res://Assets/Fonts/Perfect DOS VGA 437.ttf" id="4_ws1jm"]
+[ext_resource type="PackedScene" uid="uid://bk4rnokvghqd" path="res://Inventory/Main_Inventory.tscn" id="5_rk05t"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_puaut"]
 
@@ -91,6 +92,14 @@ theme_override_fonts/font = ExtResource("4_ws1jm")
 theme_override_font_sizes/font_size = 34
 text = "Go diving?"
 horizontal_alignment = 1
+
+[node name="MainInventory" parent="." instance=ExtResource("5_rk05t")]
+visible = false
+offset_left = 328.0
+offset_top = 88.0
+offset_right = 536.0
+offset_bottom = 272.0
+scale = Vector2(3, 3)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 visible = false

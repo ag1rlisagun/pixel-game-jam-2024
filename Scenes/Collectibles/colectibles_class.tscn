@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://kprpnglcojuo"]
+
+[ext_resource type="Script" path="res://Scenes/Collectibles/colectibles_class.gd" id="1_lagjs"]
+[ext_resource type="Script" path="res://Scripts/Area2D.gd" id="3_2pckm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8m1uq"]
+
+[node name="Collectibles" type="Node2D"]
+script = ExtResource("1_lagjs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_2pckm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_8m1uq")
