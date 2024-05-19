@@ -4,15 +4,21 @@ extends Panel
 @onready var item_quantity_text = $CenterContainer/Panel/ItemDisplay/Quantity
 var item_name: String = ""
 
-func update(item: InvItem):
-	if !item:
+func update(slot: InvSlot):
+	if !slot.item:
 		item_display.visible = false
-	elif item:
+		item_quantity_text.visible = false
+		
+	elif slot.item:
 		item_display.visible = true
-		item_display.texture = item.texture
+		item_display.texture = slot.item.texture
 		item_display.scale.x = 0.1
 		item_display.scale.y = 0.1
-		$CollectAttributes.text = item.name
+		$CollectAttributes.text = slot.item.name
+		if slot.quantity > 1:
+			item_quantity_text.text = str(slot.quantity)
+			item_quantity_text.visible = true
+		
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

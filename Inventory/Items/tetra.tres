@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://x60y5pi4wo85"]
+
+[ext_resource type="Script" path="res://Inventory/inventory_item.gd" id="1_acbn0"]
+[ext_resource type="Texture2D" uid="uid://givlwuuxehud" path="res://Assets/Sprites/Fish/rf flipped big.png" id="2_pftxb"]
+
+[resource]
+script = ExtResource("1_acbn0")
+name = "Tetra Fish"
+texture = ExtResource("2_pftxb")
+price = 250

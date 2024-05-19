@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://q12d13llk3a0"]
+
+[ext_resource type="Script" path="res://Inventory/inventory_item.gd" id="1_yyhfc"]
+[ext_resource type="Texture2D" uid="uid://co0v34rqf8dha" path="res://Assets/Sprites/Fish/pf big.png" id="2_cy0ix"]
+
+[resource]
+script = ExtResource("1_yyhfc")
+name = "Betta Fish"
+texture = ExtResource("2_cy0ix")
+price = 100

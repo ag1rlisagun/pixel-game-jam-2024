@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://bjyyolouxkk6p"]
+
+[ext_resource type="Script" path="res://Inventory/inventory_item.gd" id="1_s5qto"]
+[ext_resource type="Texture2D" uid="uid://cps8q11rr7jqg" path="res://Assets/Sprites/Fish/sf flipped big.png" id="2_vjsuc"]
+
+[resource]
+script = ExtResource("1_s5qto")
+name = "Minnow"
+texture = ExtResource("2_vjsuc")
+price = 250

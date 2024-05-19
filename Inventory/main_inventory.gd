@@ -6,11 +6,12 @@ extends Control
 var is_open = false
 
 func update_slots():
-	for i in range(min(inv.items.size(), slots.size())):
-		slots[i].update(inv.items[i])
+	for i in range(min(inv.slots.size(), slots.size())):
+		slots[i].update(inv.slots[i])
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	inv.update.connect(update_slots)
 	update_slots()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

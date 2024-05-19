@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bl3quuv38rhfe"]
+[gd_scene load_steps=6 format=3 uid="uid://bl3quuv38rhfe"]
 
 [ext_resource type="Script" path="res://Scripts/fish_character_scene.gd" id="1_4pivt"]
 [ext_resource type="FontFile" uid="uid://b5nrh027kp47x" path="res://Assets/Fonts/Perfect DOS VGA 437.ttf" id="1_x3g4b"]
 [ext_resource type="Script" path="res://Scripts/Area2D.gd" id="2_5qbu1"]
+[ext_resource type="Resource" uid="uid://btepo6q5hbj70" path="res://Inventory/player_inventory.tres" id="2_qlp5w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_36elo"]
 
 [node name="FishCharacter" type="CharacterBody2D"]
 script = ExtResource("1_4pivt")
+inv = ExtResource("2_qlp5w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_36elo")

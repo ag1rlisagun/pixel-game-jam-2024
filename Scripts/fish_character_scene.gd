@@ -7,6 +7,9 @@ enum {
 	MOVE
 }
 
+@export var item: InvItem
+@export var inv: Inv
+
 var current_state = IDLE
 var dir = Vector2.RIGHT
 
@@ -71,6 +74,7 @@ func _process(delta):
 	if player_entered:
 		if Input.is_action_just_pressed("action"):
 			fish.visible = false
+			collect(item)
 			queue_free()
 			
 	move_and_slide()
@@ -106,6 +110,7 @@ func _ready():
 		get_node("FishAttributes").set("theme_override_font_sizes/font_size", 18);
 		
 	if type == "Betta Fish":
+		item = preload("res://Inventory/Items/betta_fish.tres")
 		if is_diving:
 			coll_shape1.scale.x = 3.5
 			coll_shape1.scale.y = 3.5
@@ -125,6 +130,7 @@ func _ready():
 		sprite.texture = preload("res://Assets/Sprites/Fish/pf big.png")
 	
 	if type == "Clownfish":
+		item = preload("res://Inventory/Items/clownfish.tres")
 		if is_diving:
 			coll_shape1.scale.x = 3
 			coll_shape1.scale.y = 3
@@ -144,6 +150,7 @@ func _ready():
 		sprite.texture = preload("res://Assets/Sprites/Fish/nf big.png")
 	
 	if type == "Hummingbird Tetra":
+		item = preload("res://Inventory/Items/hummingbird.tres")
 		if is_diving:
 			coll_shape1.scale.x = 2.5
 			coll_shape1.scale.y = 2.5
@@ -163,6 +170,7 @@ func _ready():
 		sprite.texture = preload("res://Assets/Sprites/Fish/pif big.png")
 
 	if type == "Green Sunfish":
+		item = preload("res://Inventory/Items/green.tres")
 		if is_diving:
 			coll_shape1.scale.x = 4
 			coll_shape1.scale.y = 4
@@ -182,6 +190,7 @@ func _ready():
 		sprite.texture = preload("res://Assets/Sprites/Fish/gf right big.png")
 
 	if type == "Maroon Clownfish":
+		item = preload("res://Inventory/Items/maroon.tres")
 		if is_diving:
 			coll_shape1.scale.x = 2
 			coll_shape1.scale.y = 2
@@ -201,6 +210,7 @@ func _ready():
 		sprite.texture = preload("res://Assets/Sprites/Fish/orangright resized.png")
 
 	if type == "Minnow":
+		item = preload("res://Inventory/Items/minnow.tres")
 		if is_diving:
 			coll_shape1.scale.x = 2
 			coll_shape1.scale.y = 2
@@ -220,6 +230,7 @@ func _ready():
 		sprite.texture = preload("res://Assets/Sprites/Fish/sf flipped big.png")
 
 	if type == "Red Snapper":
+		item = preload("res://Inventory/Items/red.tres")
 		if is_diving:
 			coll_shape1.scale.x = 3.5
 			coll_shape1.scale.y = 3.5
@@ -239,6 +250,7 @@ func _ready():
 		sprite.texture = preload("res://Assets/Sprites/Fish/rf resized.png")
 
 	if type == "Tetra Fish":
+		item = preload("res://Inventory/Items/tetra.tres")
 		if is_diving:
 			coll_shape1.scale.x = 3
 			coll_shape1.scale.y = 3
@@ -260,3 +272,5 @@ func _ready():
 	fish_name.text = type
 	fish_attributes.text = "Health: " + str(health) + "/" + str(health) + "\n" + " Rarity: " + str(rarity) + "/10"
 
+func collect(item):
+	inv.insert(item)

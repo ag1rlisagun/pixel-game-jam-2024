@@ -5,6 +5,7 @@ const SPEED = 100.0
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var action_prompt = $ActionPrompt
+@export var inv: Inv
 
 func player():
 	pass
@@ -57,3 +58,5 @@ func _on_area_2d_area_entered(area):
 func _on_area_2d_area_exited(area):
 	if area.has_method("collectible"):
 		action_prompt.visible = false
+		
+

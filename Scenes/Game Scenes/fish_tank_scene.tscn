@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c5nvjpkjngt1g"]
+[gd_scene load_steps=14 format=3 uid="uid://c5nvjpkjngt1g"]
 
 [ext_resource type="PackedScene" uid="uid://djt8plesbx05" path="res://Scenes/Game Scenes/starter_fish_tank.tscn" id="1_jawij"]
 [ext_resource type="Script" path="res://Scripts/fish_tank_scene.gd" id="1_k0a2t"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://dl6cw1g2j2l4s" path="res://Assets/Music/little_oannes_radio1.wav" id="3_uvk44"]
 [ext_resource type="FontFile" uid="uid://b5nrh027kp47x" path="res://Assets/Fonts/Perfect DOS VGA 437.ttf" id="5_tdind"]
 [ext_resource type="PackedScene" uid="uid://bl3quuv38rhfe" path="res://Scenes/Fish Characters/fish_character_scene.tscn" id="6_rsvdp"]
+[ext_resource type="PackedScene" uid="uid://bk4rnokvghqd" path="res://Inventory/Main_Inventory.tscn" id="7_lting"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hqkcv"]
 
@@ -80,6 +81,14 @@ type = "Tetra Fish"
 position = Vector2(368, 352)
 collision_layer = 0
 type = "Red Snapper"
+
+[node name="MainInventory" parent="." instance=ExtResource("7_lting")]
+visible = false
+offset_left = 328.0
+offset_top = 88.0
+offset_right = 536.0
+offset_bottom = 272.0
+scale = Vector2(3, 3)
 
 [node name="BackButton" type="Button" parent="."]
 offset_left = 8.0
