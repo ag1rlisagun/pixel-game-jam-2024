@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://8tjp6rwp87ur"]
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://d0ht3kik8wh7m"]
 
-[ext_resource type="Script" path="res://Inventory/inventory_item.gd" id="1_jnss0"]
-[ext_resource type="Texture2D" uid="uid://cwfx6b51mmpkh" path="res://Assets/Sprites/Fish/pif big.png" id="2_unbnu"]
+[ext_resource type="Script" path="res://Inventory/inventory_item.gd" id="1_eae5e"]
+[ext_resource type="Texture2D" uid="uid://dn7t3n534oli0" path="res://Assets/Sprites/Fish/gf right big.png" id="2_minhp"]
 
 [resource]
-script = ExtResource("1_jnss0")
-name = "Hummingbird Tetra"
-texture = ExtResource("2_unbnu")
+script = ExtResource("1_eae5e")
+name = "Green Sunfish"
+texture = ExtResource("2_minhp")
 price = 200

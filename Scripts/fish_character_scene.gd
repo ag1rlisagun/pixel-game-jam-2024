@@ -29,11 +29,12 @@ var dir = Vector2.RIGHT
 
 var player_entered = false
 var is_diving = false
+var in_tank = false
 
 # FIGURE OUT HEALTH THAT DEPLETES AND SAVES
 
 func choose(array):
-	print("Shuffling Array...")
+#	print("Shuffling Array...")
 	array.shuffle()
 	return array.front()
 
@@ -55,7 +56,7 @@ func _on_area_2d_body_exited(body):
 		player_entered = false
 		
 func move(delta):
-	print("Moving ")
+#	print("Moving ")
 	position += dir * speed * delta
 	if dir.x == 1:
 		sprite.flip_h = false
@@ -80,10 +81,10 @@ func _process(delta):
 	move_and_slide()
 
 func _on_timer_timeout():
-	print("Getting new timer wait time...")
+#	print("Getting new timer wait time...")
 	$Timer.wait_time = choose([0.75, 1, 1.5])
 	
-	print("Choosing a new state...")
+#	print("Choosing a new state...")
 	current_state = choose([IDLE, NEW_DIR, MOVE])
 
 func die():
@@ -91,11 +92,12 @@ func die():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("Randomizing...")
+#	print("Randomizing...")
 	randomize()
 	
+	in_tank = get_tree().get_current_scene().scene_file_path == "res://Scenes/Game Scenes/fish_tank_scene.tscn"
 	is_diving = get_tree().get_current_scene().scene_file_path == "res://Scenes/Game Scenes/diving_scene.tscn"
-	print("Getting type of fish...")
+#	print("Getting type of fish...")
 	
 	if is_diving:
 		sprite.scale.x = 0.1
@@ -150,7 +152,7 @@ func _ready():
 		sprite.texture = preload("res://Assets/Sprites/Fish/nf big.png")
 	
 	if type == "Hummingbird Tetra":
-		item = preload("res://Inventory/Items/hummingbird.tres")
+		item = preload("res://Inventory/Items/humming.tres")
 		if is_diving:
 			coll_shape1.scale.x = 2.5
 			coll_shape1.scale.y = 2.5
@@ -274,3 +276,4 @@ func _ready():
 
 func collect(item):
 	inv.insert(item)
+	print("Caught " + item.name)

@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://dca027q6kokoe"]
 
 [ext_resource type="Script" path="res://Inventory/inventory_item.gd" id="1_s3olp"]
-[ext_resource type="Texture2D" uid="uid://cwfx6b51mmpkh" path="res://Assets/Sprites/Fish/pif big.png" id="2_liotv"]
+[ext_resource type="Texture2D" uid="uid://dax0vin6e0a1q" path="res://Assets/Sprites/Fish/orangright resized.png" id="2_ti81n"]
 
 [resource]
 script = ExtResource("1_s3olp")
-name = "Hummingbird Tetra"
-texture = ExtResource("2_liotv")
-price = 200
+name = "Maroon Clownfish"
+texture = ExtResource("2_ti81n")
+price = 250

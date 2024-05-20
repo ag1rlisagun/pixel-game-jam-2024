@@ -1,9 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://c5nvjpkjngt1g"]
+[gd_scene load_steps=16 format=3 uid="uid://c5nvjpkjngt1g"]
 
 [ext_resource type="PackedScene" uid="uid://djt8plesbx05" path="res://Scenes/Game Scenes/starter_fish_tank.tscn" id="1_jawij"]
 [ext_resource type="Script" path="res://Scripts/fish_tank_scene.gd" id="1_k0a2t"]
 [ext_resource type="Texture2D" uid="uid://bba7d4yfyutki" path="res://Assets/Backgrounds/title_screen_sway/Untitled_Artwork-1.png" id="1_l061k"]
+[ext_resource type="Resource" uid="uid://bdetm4630h2nk" path="res://Inventory/fish_tank_fish_inventory.tres" id="2_eldty"]
 [ext_resource type="PackedScene" uid="uid://cbtaxioix1bhc" path="res://Scenes/Game Scenes/big_fish_tank.tscn" id="3_gcbkc"]
+[ext_resource type="Resource" uid="uid://c53pfdiqblqvt" path="res://Inventory/decor_fish_tank_inventory.tres" id="3_puq3o"]
 [ext_resource type="AudioStream" uid="uid://dl6cw1g2j2l4s" path="res://Assets/Music/little_oannes_radio1.wav" id="3_uvk44"]
 [ext_resource type="FontFile" uid="uid://b5nrh027kp47x" path="res://Assets/Fonts/Perfect DOS VGA 437.ttf" id="5_tdind"]
 [ext_resource type="PackedScene" uid="uid://bl3quuv38rhfe" path="res://Scenes/Fish Characters/fish_character_scene.tscn" id="6_rsvdp"]
@@ -21,6 +23,8 @@
 
 [node name="FishTankScene" type="Node2D"]
 script = ExtResource("1_k0a2t")
+fish_inv = ExtResource("2_eldty")
+decor_inv = ExtResource("3_puq3o")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_uvk44")
@@ -43,41 +47,49 @@ position = Vector2(632, 368)
 scale = Vector2(1.1, 1.1)
 
 [node name="Betta" parent="." instance=ExtResource("6_rsvdp")]
+visible = false
 position = Vector2(968, 232)
 collision_layer = 0
 type = "Betta Fish"
 
 [node name="Clown" parent="." instance=ExtResource("6_rsvdp")]
+visible = false
 position = Vector2(592, 200)
 collision_layer = 0
 type = "Clownfish"
 
 [node name="Green" parent="." instance=ExtResource("6_rsvdp")]
+visible = false
 position = Vector2(1040, 512)
 collision_layer = 0
 type = "Green Sunfish"
 
 [node name="Maroon" parent="." instance=ExtResource("6_rsvdp")]
+visible = false
 position = Vector2(248, 200)
 collision_layer = 0
 type = "Maroon Clownfish"
 
 [node name="Hummingbird" parent="." instance=ExtResource("6_rsvdp")]
+visible = false
 position = Vector2(232, 456)
 collision_layer = 0
 type = "Hummingbird Tetra"
 
 [node name="Minnow2" parent="." instance=ExtResource("6_rsvdp")]
+visible = false
 position = Vector2(576, 304)
 collision_layer = 0
 type = "Minnow"
 
 [node name="Tetra" parent="." instance=ExtResource("6_rsvdp")]
+visible = false
 position = Vector2(672, 456)
 collision_layer = 0
 type = "Tetra Fish"
 
 [node name="RedSnapper2" parent="." instance=ExtResource("6_rsvdp")]
+visible = false
 position = Vector2(368, 352)
 collision_layer = 0
 type = "Red Snapper"
