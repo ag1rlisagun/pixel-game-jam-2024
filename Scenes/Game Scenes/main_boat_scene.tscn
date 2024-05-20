@@ -1,9 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://wmhcwqh4juxy"]
+[gd_scene load_steps=24 format=3 uid="uid://wmhcwqh4juxy"]
 
 [ext_resource type="PackedScene" uid="uid://hwdfkcp5wx86" path="res://Scenes/Animated Background/animated_sprite_2d.tscn" id="1_ke2ea"]
 [ext_resource type="Script" path="res://Scripts/main_boat_scene.gd" id="1_y0obd"]
+[ext_resource type="Resource" uid="uid://btepo6q5hbj70" path="res://Inventory/player_inventory.tres" id="2_yg0l6"]
+[ext_resource type="Resource" uid="uid://bdetm4630h2nk" path="res://Inventory/fish_tank_fish_inventory.tres" id="3_b4pdu"]
 [ext_resource type="AudioStream" uid="uid://bmyi1o2nh0enf" path="res://Assets/Music/little_oannes_radio1(no filter).wav" id="3_m6twp"]
 [ext_resource type="FontFile" uid="uid://b5nrh027kp47x" path="res://Assets/Fonts/Perfect DOS VGA 437.ttf" id="4_ws1jm"]
+[ext_resource type="Resource" uid="uid://c53pfdiqblqvt" path="res://Inventory/decor_fish_tank_inventory.tres" id="4_xgukj"]
 [ext_resource type="PackedScene" uid="uid://bk4rnokvghqd" path="res://Inventory/Main_Inventory.tscn" id="5_rk05t"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_puaut"]
@@ -15,6 +18,16 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jqpdr"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g18b4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2dtoy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qk0pg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uc5m2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g7rsv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ikf5s"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h00lv"]
 
@@ -28,9 +41,12 @@
 
 [node name="main_boat_scene" type="Node2D"]
 script = ExtResource("1_y0obd")
+inv = ExtResource("2_yg0l6")
+fish_inv = ExtResource("3_b4pdu")
+decor_inv = ExtResource("4_xgukj")
 
 [node name="AnimatedSprite2D" parent="." instance=ExtResource("1_ke2ea")]
-frame_progress = 0.174056
+frame_progress = 0.527566
 
 [node name="FishTankButton" type="Button" parent="."]
 offset_left = 547.0
@@ -101,6 +117,22 @@ offset_right = 536.0
 offset_bottom = 272.0
 scale = Vector2(3, 3)
 
+[node name="SaveButton" type="Button" parent="MainInventory"]
+layout_mode = 0
+offset_left = 85.3333
+offset_top = 186.667
+offset_right = 160.333
+offset_bottom = 218.667
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("4_ws1jm")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2dtoy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_qk0pg")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_uc5m2")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_g7rsv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ikf5s")
+text = "Save"
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 visible = false
 anchors_preset = 8
@@ -164,5 +196,6 @@ text = "No"
 [connection signal="mouse_entered" from="DiveButton" to="." method="_on_dive_button_mouse_entered"]
 [connection signal="mouse_exited" from="DiveButton" to="." method="_on_dive_button_mouse_exited"]
 [connection signal="pressed" from="DiveButton" to="." method="_on_dive_button_pressed"]
+[connection signal="pressed" from="MainInventory/SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/BackToStartButton" to="." method="_on_back_to_start_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/StayHereButton" to="." method="_on_stay_here_button_pressed"]

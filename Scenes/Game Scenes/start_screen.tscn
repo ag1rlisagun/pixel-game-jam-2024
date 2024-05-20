@@ -1,9 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://d2by83v0k8ifh"]
+[gd_scene load_steps=11 format=3 uid="uid://d2by83v0k8ifh"]
 
 [ext_resource type="Script" path="res://Scripts/start_screen.gd" id="1_rudbt"]
 [ext_resource type="AudioStream" uid="uid://60xmhlwu0ga4" path="res://Assets/Music/fish_game_title.wav" id="1_t67bj"]
+[ext_resource type="Resource" uid="uid://btepo6q5hbj70" path="res://Inventory/player_inventory.tres" id="2_4k71y"]
 [ext_resource type="PackedScene" uid="uid://hwdfkcp5wx86" path="res://Scenes/Animated Background/animated_sprite_2d.tscn" id="2_mjrku"]
 [ext_resource type="FontFile" uid="uid://b5nrh027kp47x" path="res://Assets/Fonts/Perfect DOS VGA 437.ttf" id="2_rgxw4"]
+[ext_resource type="Resource" uid="uid://bdetm4630h2nk" path="res://Inventory/fish_tank_fish_inventory.tres" id="3_vo8ha"]
+[ext_resource type="Resource" uid="uid://c53pfdiqblqvt" path="res://Inventory/decor_fish_tank_inventory.tres" id="4_puyct"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ub6ix"]
 
@@ -19,6 +22,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rudbt")
+inv = ExtResource("2_4k71y")
+fish_inv = ExtResource("3_vo8ha")
+decor_inv = ExtResource("4_puyct")
 
 [node name="AnimatedSprite2D" parent="." instance=ExtResource("2_mjrku")]
 

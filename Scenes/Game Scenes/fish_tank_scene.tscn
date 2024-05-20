@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://c5nvjpkjngt1g"]
+[gd_scene load_steps=17 format=3 uid="uid://c5nvjpkjngt1g"]
 
 [ext_resource type="PackedScene" uid="uid://djt8plesbx05" path="res://Scenes/Game Scenes/starter_fish_tank.tscn" id="1_jawij"]
 [ext_resource type="Script" path="res://Scripts/fish_tank_scene.gd" id="1_k0a2t"]
 [ext_resource type="Texture2D" uid="uid://bba7d4yfyutki" path="res://Assets/Backgrounds/title_screen_sway/Untitled_Artwork-1.png" id="1_l061k"]
 [ext_resource type="Resource" uid="uid://bdetm4630h2nk" path="res://Inventory/fish_tank_fish_inventory.tres" id="2_eldty"]
+[ext_resource type="Resource" uid="uid://btepo6q5hbj70" path="res://Inventory/player_inventory.tres" id="2_qstqt"]
 [ext_resource type="PackedScene" uid="uid://cbtaxioix1bhc" path="res://Scenes/Game Scenes/big_fish_tank.tscn" id="3_gcbkc"]
 [ext_resource type="Resource" uid="uid://c53pfdiqblqvt" path="res://Inventory/decor_fish_tank_inventory.tres" id="3_puq3o"]
 [ext_resource type="AudioStream" uid="uid://dl6cw1g2j2l4s" path="res://Assets/Music/little_oannes_radio1.wav" id="3_uvk44"]
@@ -23,6 +24,7 @@
 
 [node name="FishTankScene" type="Node2D"]
 script = ExtResource("1_k0a2t")
+inv = ExtResource("2_qstqt")
 fish_inv = ExtResource("2_eldty")
 decor_inv = ExtResource("3_puq3o")
 
@@ -38,58 +40,50 @@ scale = Vector2(0.95, 0.95)
 texture = ExtResource("1_l061k")
 
 [node name="big_fish_tank" parent="." instance=ExtResource("3_gcbkc")]
-visible = false
 position = Vector2(624, 360)
 scale = Vector2(1.05, 1.05)
 
 [node name="StarterFishTank" parent="." instance=ExtResource("1_jawij")]
+visible = false
 position = Vector2(632, 368)
 scale = Vector2(1.1, 1.1)
 
 [node name="Betta" parent="." instance=ExtResource("6_rsvdp")]
-visible = false
 position = Vector2(968, 232)
 collision_layer = 0
 type = "Betta Fish"
 
 [node name="Clown" parent="." instance=ExtResource("6_rsvdp")]
-visible = false
 position = Vector2(592, 200)
 collision_layer = 0
 type = "Clownfish"
 
 [node name="Green" parent="." instance=ExtResource("6_rsvdp")]
-visible = false
 position = Vector2(1040, 512)
 collision_layer = 0
 type = "Green Sunfish"
 
 [node name="Maroon" parent="." instance=ExtResource("6_rsvdp")]
-visible = false
 position = Vector2(248, 200)
 collision_layer = 0
 type = "Maroon Clownfish"
 
 [node name="Hummingbird" parent="." instance=ExtResource("6_rsvdp")]
-visible = false
 position = Vector2(232, 456)
 collision_layer = 0
 type = "Hummingbird Tetra"
 
 [node name="Minnow2" parent="." instance=ExtResource("6_rsvdp")]
-visible = false
 position = Vector2(576, 304)
 collision_layer = 0
 type = "Minnow"
 
 [node name="Tetra" parent="." instance=ExtResource("6_rsvdp")]
-visible = false
 position = Vector2(672, 456)
 collision_layer = 0
 type = "Tetra Fish"
 
 [node name="RedSnapper2" parent="." instance=ExtResource("6_rsvdp")]
-visible = false
 position = Vector2(368, 352)
 collision_layer = 0
 type = "Red Snapper"
@@ -101,6 +95,22 @@ offset_top = 88.0
 offset_right = 536.0
 offset_bottom = 272.0
 scale = Vector2(3, 3)
+
+[node name="SaveButton" type="Button" parent="MainInventory"]
+layout_mode = 0
+offset_left = 85.3333
+offset_top = 186.667
+offset_right = 160.333
+offset_bottom = 218.667
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("5_tdind")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hqkcv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hpvlx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_aku5m")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_b5712")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eunso")
+text = "Save"
 
 [node name="BackButton" type="Button" parent="."]
 offset_left = 8.0
@@ -116,4 +126,5 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_b5712")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_eunso")
 text = "Back"
 
+[connection signal="pressed" from="MainInventory/SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

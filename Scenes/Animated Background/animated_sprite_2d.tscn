@@ -1,13 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://hwdfkcp5wx86"]
+[gd_scene load_steps=6 format=3 uid="uid://hwdfkcp5wx86"]
 
 [ext_resource type="Texture2D" uid="uid://bba7d4yfyutki" path="res://Assets/Backgrounds/title_screen_sway/Untitled_Artwork-1.png" id="1_5vjp6"]
 [ext_resource type="Texture2D" uid="uid://b6qydigbxlwi6" path="res://Assets/Backgrounds/title_screen_sway/Untitled_Artwork-2.png" id="2_4hg05"]
-[ext_resource type="Texture2D" uid="uid://b2is7i7yscj3w" path="res://Assets/Backgrounds/title_screen_sway/Untitled_Artwork-3.png" id="3_au05g"]
-[ext_resource type="Texture2D" uid="uid://craqkf306l3w0" path="res://Assets/Backgrounds/title_screen_sway/Untitled_Artwork-4.png" id="4_w1473"]
 [ext_resource type="Texture2D" uid="uid://b3utrnmbgoiou" path="res://Assets/Backgrounds/title_screen_sway/Untitled_Artwork-5.png" id="5_ex10i"]
 [ext_resource type="Texture2D" uid="uid://xdk58043s2nm" path="res://Assets/Backgrounds/title_screen_sway/Untitled_Artwork-6.png" id="6_npo8e"]
-[ext_resource type="Texture2D" uid="uid://cgvr1xl07g53a" path="res://Assets/Backgrounds/title_screen_sway/Untitled_Artwork-7.png" id="7_bf5hq"]
-[ext_resource type="Texture2D" uid="uid://gob7tclxf8nj" path="res://Assets/Backgrounds/title_screen_sway/Untitled_Artwork-8.png" id="8_w10lt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ns78g"]
 animations = [{
@@ -19,26 +15,14 @@ animations = [{
 "texture": ExtResource("2_4hg05")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_au05g")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_w1473")
-}, {
-"duration": 1.0,
 "texture": ExtResource("5_ex10i")
 }, {
 "duration": 1.0,
 "texture": ExtResource("6_npo8e")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_bf5hq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_w10lt")
 }],
 "loop": true,
 "name": &"swaying_bg",
-"speed": 1.4
+"speed": 1.0
 }]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D"]
@@ -46,5 +30,4 @@ position = Vector2(640, 360)
 scale = Vector2(0.41, 0.41)
 sprite_frames = SubResource("SpriteFrames_ns78g")
 animation = &"swaying_bg"
-autoplay = "swaying_bg"
-frame_progress = 0.230115
+frame_progress = 0.816384

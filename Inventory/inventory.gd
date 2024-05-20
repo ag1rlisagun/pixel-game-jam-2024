@@ -15,3 +15,10 @@ func insert(item: InvItem):
 			empty_slots[0].item = item
 			empty_slots[0].quantity = 1
 	update.emit()
+	
+#func move_inv(item: InvItem, inventory: Inv):
+#	var item_ind = slots.find(item)
+#	inventory.insert(slots[item_ind].item)
+#	slots.remove_at(item_ind)
+#	update.emit()  
+

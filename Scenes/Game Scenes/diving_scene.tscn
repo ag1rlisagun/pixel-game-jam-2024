@@ -1,8 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://cnyolxg482ntl"]
+[gd_scene load_steps=24 format=3 uid="uid://cnyolxg482ntl"]
 
 [ext_resource type="AudioStream" uid="uid://i13myngltv3y" path="res://Assets/Music/oannes_underwater_maybe.wav" id="1_l6gxf"]
 [ext_resource type="Script" path="res://Scripts/diving_scene.gd" id="1_qli07"]
 [ext_resource type="PackedScene" uid="uid://brq5x3f3yu208" path="res://Scenes/Player/player_diver.tscn" id="1_y513f"]
+[ext_resource type="Resource" uid="uid://btepo6q5hbj70" path="res://Inventory/player_inventory.tres" id="2_eojlp"]
+[ext_resource type="Resource" uid="uid://bdetm4630h2nk" path="res://Inventory/fish_tank_fish_inventory.tres" id="3_i8ho1"]
+[ext_resource type="Resource" uid="uid://c53pfdiqblqvt" path="res://Inventory/decor_fish_tank_inventory.tres" id="4_8d2ew"]
 [ext_resource type="Texture2D" uid="uid://b7h6oitts5unq" path="res://Assets/Backgrounds/divingbg resized.png" id="4_dxlmc"]
 [ext_resource type="PackedScene" uid="uid://bl3quuv38rhfe" path="res://Scenes/Fish Characters/fish_character_scene.tscn" id="5_eux0r"]
 [ext_resource type="FontFile" uid="uid://b5nrh027kp47x" path="res://Assets/Fonts/Perfect DOS VGA 437.ttf" id="5_pgsli"]
@@ -74,6 +77,16 @@ texture = ExtResource("6_w1cse")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_w5sof")
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7t83i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0liyb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l1n3v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j1sqv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j34tu"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4cbj3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ytj8o"]
@@ -86,6 +99,9 @@ sources/0 = SubResource("TileSetAtlasSource_w5sof")
 
 [node name="DivingScene" type="Node2D"]
 script = ExtResource("1_qli07")
+inv = ExtResource("2_eojlp")
+fish_inv = ExtResource("3_i8ho1")
+decor_inv = ExtResource("4_8d2ew")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_l6gxf")
@@ -94,7 +110,7 @@ autoplay = true
 
 [node name="DivingBackgroundPlaceholder2" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(680, 336)
+position = Vector2(736, 400)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("4_dxlmc")
 
@@ -166,6 +182,22 @@ offset_right = 48.0
 offset_bottom = 40.0
 scale = Vector2(1.5, 1.5)
 
+[node name="SaveButton" type="Button" parent="PlayerDiver/Camera2D/MainInventory"]
+layout_mode = 0
+offset_left = 85.3333
+offset_top = 186.667
+offset_right = 160.333
+offset_bottom = 218.667
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("5_pgsli")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7t83i")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0liyb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_l1n3v")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_j1sqv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j34tu")
+text = "Save"
+
 [node name="BackButton" type="Button" parent="PlayerDiver/Camera2D"]
 offset_left = -312.0
 offset_top = -176.0
@@ -184,5 +216,6 @@ text = "Back"
 wait_time = 30.0
 autostart = true
 
+[connection signal="pressed" from="PlayerDiver/Camera2D/MainInventory/SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="PlayerDiver/Camera2D/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

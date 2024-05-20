@@ -274,6 +274,6 @@ func _ready():
 	fish_name.text = type
 	fish_attributes.text = "Health: " + str(health) + "/" + str(health) + "\n" + " Rarity: " + str(rarity) + "/10"
 
-func collect(item):
-	inv.insert(item)
+func collect(item1):
+	inv.insert(item1)
 	print("Caught " + item.name)

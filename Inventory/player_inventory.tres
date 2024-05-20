@@ -6,82 +6,102 @@
 [sub_resource type="Resource" id="Resource_qflsu"]
 script = ExtResource("2_vq52w")
 quantity = 0
+slot_index = 0
 
 [sub_resource type="Resource" id="Resource_qcm22"]
 script = ExtResource("2_vq52w")
 quantity = 0
+slot_index = 1
 
 [sub_resource type="Resource" id="Resource_dkaas"]
 script = ExtResource("2_vq52w")
 quantity = 0
+slot_index = 2
 
 [sub_resource type="Resource" id="Resource_cnhaa"]
 script = ExtResource("2_vq52w")
 quantity = 0
+slot_index = 3
 
 [sub_resource type="Resource" id="Resource_mu61j"]
 script = ExtResource("2_vq52w")
 quantity = 0
+slot_index = 4
 
 [sub_resource type="Resource" id="Resource_y55im"]
 script = ExtResource("2_vq52w")
 quantity = 0
+slot_index = 5
 
 [sub_resource type="Resource" id="Resource_mb364"]
 script = ExtResource("2_vq52w")
 quantity = 0
+slot_index = 6
 
 [sub_resource type="Resource" id="Resource_013ah"]
 script = ExtResource("2_vq52w")
 quantity = 0
+slot_index = 7
 
 [sub_resource type="Resource" id="Resource_c1yev"]
 script = ExtResource("2_vq52w")
 quantity = 0
+slot_index = 8
 
 [sub_resource type="Resource" id="Resource_3kylh"]
 script = ExtResource("2_vq52w")
 quantity = 0
+slot_index = 9
 
 [sub_resource type="Resource" id="Resource_h46o7"]
 script = ExtResource("2_vq52w")
 quantity = 0
+slot_index = 10
 
 [sub_resource type="Resource" id="Resource_jjk34"]
 script = ExtResource("2_vq52w")
 quantity = 0
+slot_index = 11
 
 [sub_resource type="Resource" id="Resource_ps8wq"]
 script = ExtResource("2_vq52w")
 quantity = 0
+slot_index = 12
 
 [sub_resource type="Resource" id="Resource_ycclm"]
 script = ExtResource("2_vq52w")
 quantity = 0
+slot_index = 13
 
 [sub_resource type="Resource" id="Resource_mh0db"]
 script = ExtResource("2_vq52w")
 quantity = 0
+slot_index = 14
 
 [sub_resource type="Resource" id="Resource_63fr1"]
 script = ExtResource("2_vq52w")
 quantity = 0
+slot_index = 15
 
 [sub_resource type="Resource" id="Resource_odc5q"]
 script = ExtResource("2_vq52w")
 quantity = 0
+slot_index = 16
 
 [sub_resource type="Resource" id="Resource_s4g2c"]
 script = ExtResource("2_vq52w")
 quantity = 0
+slot_index = 17
 
 [sub_resource type="Resource" id="Resource_074it"]
 script = ExtResource("2_vq52w")
 quantity = 0
+slot_index = 18
 
 [sub_resource type="Resource" id="Resource_cqrub"]
 script = ExtResource("2_vq52w")
 quantity = 0
+slot_index = 19
 
 [resource]
 script = ExtResource("1_sqk5i")
