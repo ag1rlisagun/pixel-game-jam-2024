@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://djt8plesbx05" path="res://Scenes/Game Scenes/starter_fish_tank.tscn" id="1_jawij"]
 [ext_resource type="Script" path="res://Scripts/fish_tank_scene.gd" id="1_k0a2t"]
+[ext_resource type="AudioStream" uid="uid://bpl2i41lm0pl3" path="res://Assets/Music/little_oannes_aquatic_amble.wav" id="3_e1xvi"]
 [ext_resource type="PackedScene" uid="uid://cbtaxioix1bhc" path="res://Scenes/Game Scenes/big_fish_tank.tscn" id="3_gcbkc"]
-[ext_resource type="AudioStream" uid="uid://dl6cw1g2j2l4s" path="res://Assets/Music/little_oannes_radio1.wav" id="3_uvk44"]
 [ext_resource type="Texture2D" uid="uid://dw4i3soow3jsl" path="res://Assets/Backgrounds/upgraded tank bg big.png" id="5_kiyh1"]
 [ext_resource type="FontFile" uid="uid://b5nrh027kp47x" path="res://Assets/Fonts/Perfect DOS VGA 437.ttf" id="5_tdind"]
 [ext_resource type="PackedScene" uid="uid://bl3quuv38rhfe" path="res://Scenes/Fish Characters/fish_character_scene.tscn" id="6_rsvdp"]
@@ -28,8 +28,8 @@ position = Vector2(-88, 488)
 texture = ExtResource("5_kiyh1")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_uvk44")
-volume_db = -6.0
+stream = ExtResource("3_e1xvi")
+volume_db = -10.0
 autoplay = true
 
 [node name="big_fish_tank" parent="." instance=ExtResource("3_gcbkc")]

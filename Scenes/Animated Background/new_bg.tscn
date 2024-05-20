@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6nf24fjphkn5"]
+
+[ext_resource type="Texture2D" uid="uid://b585r6ok4od7m" path="res://Assets/Backgrounds/window_animation/a1 big.png" id="1_yggup"]
+[ext_resource type="Texture2D" uid="uid://l5b0yffrg7fv" path="res://Assets/Backgrounds/window_animation/a2 big.png" id="2_tqm01"]
+[ext_resource type="Texture2D" uid="uid://htfjwc0qtukr" path="res://Assets/Backgrounds/window_animation/a3 big.png" id="3_he12w"]
+[ext_resource type="Texture2D" uid="uid://cnqvol4jynhwg" path="res://Assets/Backgrounds/window_animation/a4 big.png" id="4_wk0df"]
+[ext_resource type="Texture2D" uid="uid://ldqo85ba08qr" path="res://Assets/Backgrounds/tss big.png" id="5_ec07i"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nmkxy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yggup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_tqm01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_he12w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wk0df")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+position = Vector2(2.08165e-12, 2.08165e-12)
+sprite_frames = SubResource("SpriteFrames_nmkxy")
+autoplay = "default"
+frame_progress = 0.548045
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(220, 209)
+texture = ExtResource("5_ec07i")

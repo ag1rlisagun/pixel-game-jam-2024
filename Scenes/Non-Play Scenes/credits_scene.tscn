@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://ci6dv0dxmobol"]
+[gd_scene load_steps=10 format=3 uid="uid://ci6dv0dxmobol"]
 
 [ext_resource type="Script" path="res://Scripts/credits_scene.gd" id="1_ki8x3"]
 [ext_resource type="FontFile" uid="uid://b5nrh027kp47x" path="res://Assets/Fonts/Perfect DOS VGA 437.ttf" id="2_wcjm4"]
 [ext_resource type="Texture2D" uid="uid://c7kkjdo26ubvm" path="res://Assets/Backgrounds/mom son big.png" id="3_x2o2r"]
+[ext_resource type="AudioStream" uid="uid://dl6cw1g2j2l4s" path="res://Assets/Music/little_oannes_radio1.wav" id="4_ouk1f"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nb34r"]
 
@@ -83,7 +84,7 @@ Musican, Christian
 Programmer, Aaliyah
 Assets Used:
 Perfect DOS VGA 437 (Font)
-Seasons Platformer Tiles by kcaze
+Seasons Platformer Tileset by kcaze
 "
 horizontal_alignment = 2
 
@@ -101,3 +102,10 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_a2sy7")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_0j1vp")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_j4kc2")
 text = "Back"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ouk1f")
+volume_db = -12.0
+autoplay = true
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

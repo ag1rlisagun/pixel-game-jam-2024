@@ -1,13 +1,14 @@
-[gd_scene load_steps=24 format=3 uid="uid://wmhcwqh4juxy"]
+[gd_scene load_steps=25 format=3 uid="uid://wmhcwqh4juxy"]
 
 [ext_resource type="PackedScene" uid="uid://hwdfkcp5wx86" path="res://Scenes/Animated Background/animated_sprite_2d.tscn" id="1_ke2ea"]
 [ext_resource type="Script" path="res://Scripts/main_boat_scene.gd" id="1_y0obd"]
 [ext_resource type="Resource" uid="uid://btepo6q5hbj70" path="res://Inventory/player_inventory.tres" id="2_yg0l6"]
 [ext_resource type="Resource" uid="uid://bdetm4630h2nk" path="res://Inventory/fish_tank_fish_inventory.tres" id="3_b4pdu"]
-[ext_resource type="AudioStream" uid="uid://bmyi1o2nh0enf" path="res://Assets/Music/little_oannes_radio1(no filter).wav" id="3_m6twp"]
 [ext_resource type="FontFile" uid="uid://b5nrh027kp47x" path="res://Assets/Fonts/Perfect DOS VGA 437.ttf" id="4_ws1jm"]
 [ext_resource type="Resource" uid="uid://c53pfdiqblqvt" path="res://Inventory/decor_fish_tank_inventory.tres" id="4_xgukj"]
 [ext_resource type="PackedScene" uid="uid://bk4rnokvghqd" path="res://Inventory/Main_Inventory.tscn" id="5_rk05t"]
+[ext_resource type="PackedScene" uid="uid://c6nf24fjphkn5" path="res://Scenes/Animated Background/new_bg.tscn" id="6_r6mfy"]
+[ext_resource type="AudioStream" uid="uid://cv8bygmkqkfme" path="res://Assets/Sfx/boat_ac_hum_loop.wav" id="8_6vykd"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_puaut"]
 
@@ -48,11 +49,15 @@ decor_inv = ExtResource("4_xgukj")
 [node name="AnimatedSprite2D" parent="." instance=ExtResource("1_ke2ea")]
 frame_progress = 0.527566
 
+[node name="AnimatedSprite2D2" parent="." instance=ExtResource("6_r6mfy")]
+position = Vector2(544, 264)
+scale = Vector2(0.41, 0.41)
+
 [node name="FishTankButton" type="Button" parent="."]
 offset_left = 547.0
-offset_top = 53.0
+offset_top = 104.0
 offset_right = 968.0
-offset_bottom = 321.0
+offset_bottom = 344.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_puaut")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_xehf7")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_vk3fh")
@@ -61,19 +66,14 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_g18b4")
 
 [node name="DiveButton" type="Button" parent="."]
 offset_left = 1029.0
-offset_top = 29.0
-offset_right = 1235.0
+offset_top = 88.0
+offset_right = 1216.0
 offset_bottom = 386.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_puaut")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_xehf7")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_vk3fh")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_jqpdr")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_g18b4")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_m6twp")
-volume_db = -6.0
-autoplay = true
 
 [node name="FishTankPrompt" type="Label" parent="."]
 visible = false
@@ -189,6 +189,16 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_ope52")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_lcfwq")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_8dngs")
 text = "No"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_6vykd")
+volume_db = -12.0
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_6vykd")
+volume_db = -10.0
+autoplay = true
 
 [connection signal="mouse_entered" from="FishTankButton" to="." method="_on_fish_tank_button_mouse_entered"]
 [connection signal="mouse_exited" from="FishTankButton" to="." method="_on_fish_tank_button_mouse_exited"]

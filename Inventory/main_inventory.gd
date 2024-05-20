@@ -13,17 +13,17 @@ func load_data():
 		inv.update.connect(update_slots)
 		update_slots()
 	else:
-		inv = load("res://Inventory/player_inventory.tres")
+		inv = preload("res://Inventory/player_inventory.tres")
 		inv.update.connect(update_slots)
 		update_slots()
 	if FileAccess.file_exists("res://SaveData/little_oannes_fish_inv.tres"):
 		fish_inv = load("res://SaveData/little_oannes_fish_inv.tres")
 	else:
-		fish_inv = load("res://Inventory/fish_tank_fish_inventory.tres")
+		fish_inv = preload("res://Inventory/fish_tank_fish_inventory.tres")
 	if FileAccess.file_exists("res://SaveData/little_oannes_decor_inv.tres"):
 		decor_inv = load("res://SaveData/little_oannes_decor_inv.tres")
 	else:
-		decor_inv = load("res://Inventory/decor_fish_tank_inventory.tres")
+		decor_inv = preload("res://Inventory/decor_fish_tank_inventory.tres")
 
 func update_slots():
 	for i in range(min(inv.slots.size(), slots.size())):
