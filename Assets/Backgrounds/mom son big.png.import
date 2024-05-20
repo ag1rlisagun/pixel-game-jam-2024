@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpumgtbtjvh12"
-path="res://.godot/imported/silver bar big.png-c5d13cd551c153f5127f7c28672c859b.ctex"
+uid="uid://c7kkjdo26ubvm"
+path="res://.godot/imported/mom son big.png-473a48e39c50f0c8a3a0c573f0530911.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Collectibles/silver bar big.png"
-dest_files=["res://.godot/imported/silver bar big.png-c5d13cd551c153f5127f7c28672c859b.ctex"]
+source_file="res://Assets/Backgrounds/mom son big.png"
+dest_files=["res://.godot/imported/mom son big.png-473a48e39c50f0c8a3a0c573f0530911.ctex"]
 
 [params]
 

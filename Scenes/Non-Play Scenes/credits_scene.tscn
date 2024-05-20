@@ -1,3 +1,103 @@
-[gd_scene format=3 uid="uid://ci6dv0dxmobol"]
+[gd_scene load_steps=9 format=3 uid="uid://ci6dv0dxmobol"]
+
+[ext_resource type="Script" path="res://Scripts/credits_scene.gd" id="1_ki8x3"]
+[ext_resource type="FontFile" uid="uid://b5nrh027kp47x" path="res://Assets/Fonts/Perfect DOS VGA 437.ttf" id="2_wcjm4"]
+[ext_resource type="Texture2D" uid="uid://c7kkjdo26ubvm" path="res://Assets/Backgrounds/mom son big.png" id="3_x2o2r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nb34r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_glsft"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a2sy7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0j1vp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j4kc2"]
 
 [node name="credits_scene" type="Node2D"]
+script = ExtResource("1_ki8x3")
+
+[node name="MomSonBig" type="Sprite2D" parent="."]
+position = Vector2(647, 356)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_x2o2r")
+
+[node name="TitleTextBlue" type="Label" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 227.0
+offset_top = 75.0
+offset_right = 1061.0
+offset_bottom = 178.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.0431373, 0, 0.494118, 0.576471)
+theme_override_fonts/font = ExtResource("2_wcjm4")
+theme_override_font_sizes/font_size = 100
+text = "Little Oannes"
+horizontal_alignment = 1
+
+[node name="TitleTextWhite" type="Label" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 235.0
+offset_top = 83.0
+offset_right = 1069.0
+offset_bottom = 186.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_wcjm4")
+theme_override_font_sizes/font_size = 100
+text = "Little Oannes"
+horizontal_alignment = 1
+
+[node name="Credits" type="Label" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 92.0
+offset_top = 414.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.0431373, 0, 0.494118, 0.576471)
+theme_override_fonts/font = ExtResource("2_wcjm4")
+theme_override_font_sizes/font_size = 48
+text = "Artist, Sauri
+Musican, Christian
+Programmer, Aaliyah
+Assets Used:
+Perfect DOS VGA 437 (Font)
+Seasons Platformer Tiles by kcaze
+"
+horizontal_alignment = 2
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 120.0
+offset_bottom = 72.0
+theme_override_colors/font_color = Color(0, 0, 0.352941, 0.501961)
+theme_override_fonts/font = ExtResource("2_wcjm4")
+theme_override_font_sizes/font_size = 37
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nb34r")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_glsft")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_a2sy7")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_0j1vp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j4kc2")
+text = "Back"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhamcsn71hfcm"
-path="res://.godot/imported/seaweed big.png-29de9c683ece73ee717e265a210b4798.ctex"
+uid="uid://dw4i3soow3jsl"
+path="res://.godot/imported/upgraded tank bg big.png-c02b46345536d201ba4b1e5aed811758.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Collectibles/seaweed big.png"
-dest_files=["res://.godot/imported/seaweed big.png-29de9c683ece73ee717e265a210b4798.ctex"]
+source_file="res://Assets/Backgrounds/upgraded tank bg big.png"
+dest_files=["res://.godot/imported/upgraded tank bg big.png-c02b46345536d201ba4b1e5aed811758.ctex"]
 
 [params]
 

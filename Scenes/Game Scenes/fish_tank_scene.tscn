@@ -1,16 +1,14 @@
-[gd_scene load_steps=17 format=3 uid="uid://c5nvjpkjngt1g"]
+[gd_scene load_steps=15 format=3 uid="uid://c5nvjpkjngt1g"]
 
 [ext_resource type="PackedScene" uid="uid://djt8plesbx05" path="res://Scenes/Game Scenes/starter_fish_tank.tscn" id="1_jawij"]
 [ext_resource type="Script" path="res://Scripts/fish_tank_scene.gd" id="1_k0a2t"]
-[ext_resource type="Texture2D" uid="uid://bba7d4yfyutki" path="res://Assets/Backgrounds/title_screen_sway/Untitled_Artwork-1.png" id="1_l061k"]
-[ext_resource type="Resource" uid="uid://bdetm4630h2nk" path="res://Inventory/fish_tank_fish_inventory.tres" id="2_eldty"]
-[ext_resource type="Resource" uid="uid://btepo6q5hbj70" path="res://Inventory/player_inventory.tres" id="2_qstqt"]
 [ext_resource type="PackedScene" uid="uid://cbtaxioix1bhc" path="res://Scenes/Game Scenes/big_fish_tank.tscn" id="3_gcbkc"]
-[ext_resource type="Resource" uid="uid://c53pfdiqblqvt" path="res://Inventory/decor_fish_tank_inventory.tres" id="3_puq3o"]
 [ext_resource type="AudioStream" uid="uid://dl6cw1g2j2l4s" path="res://Assets/Music/little_oannes_radio1.wav" id="3_uvk44"]
+[ext_resource type="Texture2D" uid="uid://dw4i3soow3jsl" path="res://Assets/Backgrounds/upgraded tank bg big.png" id="5_kiyh1"]
 [ext_resource type="FontFile" uid="uid://b5nrh027kp47x" path="res://Assets/Fonts/Perfect DOS VGA 437.ttf" id="5_tdind"]
 [ext_resource type="PackedScene" uid="uid://bl3quuv38rhfe" path="res://Scenes/Fish Characters/fish_character_scene.tscn" id="6_rsvdp"]
 [ext_resource type="PackedScene" uid="uid://bk4rnokvghqd" path="res://Inventory/Main_Inventory.tscn" id="7_lting"]
+[ext_resource type="Texture2D" uid="uid://cdi1e35ee8h6v" path="res://Assets/Backgrounds/bg smaller tank upscaled.png" id="8_xomov"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hqkcv"]
 
@@ -24,24 +22,24 @@
 
 [node name="FishTankScene" type="Node2D"]
 script = ExtResource("1_k0a2t")
-inv = ExtResource("2_qstqt")
-fish_inv = ExtResource("2_eldty")
-decor_inv = ExtResource("3_puq3o")
+
+[node name="UpgradedTankBgBig" type="Sprite2D" parent="."]
+position = Vector2(-88, 488)
+texture = ExtResource("5_kiyh1")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_uvk44")
 volume_db = -6.0
 autoplay = true
 
-[node name="UntitledArtwork-1" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(392, 688)
-scale = Vector2(0.95, 0.95)
-texture = ExtResource("1_l061k")
-
 [node name="big_fish_tank" parent="." instance=ExtResource("3_gcbkc")]
 position = Vector2(624, 360)
 scale = Vector2(1.05, 1.05)
+
+[node name="BgSmallerTankUpscaled" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(664, 360)
+texture = ExtResource("8_xomov")
 
 [node name="StarterFishTank" parent="." instance=ExtResource("1_jawij")]
 visible = false
@@ -125,6 +123,45 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_aku5m")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_b5712")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_eunso")
 text = "Back"
+
+[node name="TitleTextBlue" type="Label" parent="."]
+visible = false
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 216.0
+offset_top = 320.0
+offset_right = 1050.0
+offset_bottom = 423.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.0431373, 0, 0.494118, 0.576471)
+theme_override_fonts/font = ExtResource("5_tdind")
+theme_override_font_sizes/font_size = 100
+text = "Little Oannes"
+horizontal_alignment = 1
+
+[node name="TitleTextWhite" type="Label" parent="."]
+visible = false
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 224.0
+offset_top = 328.0
+offset_right = 1058.0
+offset_bottom = 431.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_tdind")
+theme_override_font_sizes/font_size = 100
+text = "Little Oannes"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="MainInventory/SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

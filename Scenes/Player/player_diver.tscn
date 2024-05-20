@@ -90,24 +90,5 @@ theme_override_font_sizes/font_size = 16
 text = "press \"e\""
 horizontal_alignment = 1
 
-[node name="TitleTextWhite" type="Label" parent="."]
-texture_filter = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -194.0
-offset_top = -75.0
-offset_right = 585.0
-offset_bottom = 28.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.5, 0.5)
-theme_override_fonts/font = ExtResource("10_caq1a")
-theme_override_font_sizes/font_size = 100
-text = "Little Oannes"
-horizontal_alignment = 1
-
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

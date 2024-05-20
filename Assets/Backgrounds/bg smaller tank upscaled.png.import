@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://m73favxxm7ac"
-path="res://.godot/imported/gd big.png-7435cb31777d8a58e65803c0d6d3100c.ctex"
+uid="uid://cdi1e35ee8h6v"
+path="res://.godot/imported/bg smaller tank upscaled.png-2c32ed33ddb0a015dcfd9c58d9849115.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Collectibles/gd big.png"
-dest_files=["res://.godot/imported/gd big.png-7435cb31777d8a58e65803c0d6d3100c.ctex"]
+source_file="res://Assets/Backgrounds/bg smaller tank upscaled.png"
+dest_files=["res://.godot/imported/bg smaller tank upscaled.png-2c32ed33ddb0a015dcfd9c58d9849115.ctex"]
 
 [params]
 
